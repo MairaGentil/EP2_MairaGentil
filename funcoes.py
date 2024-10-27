@@ -61,3 +61,21 @@ def afundados(frota, tabuleiro):
     #         if linhas[p] == 'x':
     #             qnt_afundados += 1
 
+def posicao_valida(frota, linha, coluna, orientacao, tamanho):
+    posicoes = define_posicoes(linha, coluna, orientacao, tamanho)
+    ocupadas = 0
+    for valor in frota.values():
+        for listavalores in valor:
+            for parfrota in listavalores:
+                for par in posicoes:
+                    if par == parfrota:
+                        ocupadas += 1
+    for par in posicoes:
+        if 9 < par[0] or par[0] < 0:
+            ocupadas += 1
+        if 9 < par[1] or par[1] < 0:
+            ocupadas += 1
+    if ocupadas  == 0:
+        return True 
+    else:
+        return False
