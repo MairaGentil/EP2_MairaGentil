@@ -14,6 +14,7 @@ for nome,(tamanho,qnt) in nom.items():
             orientacao = int(input("[1] Vertical [2] Horizontal >"))
             if orientacao == 1:
                 orientacao = 'vertical'
+                
             elif orientacao == 2:
                 orientacao = 'horizontal'
 
