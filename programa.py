@@ -113,3 +113,24 @@ while jogando == True:
         print('Parabéns! Você derrubou todos os navios do seu oponente!')
         jogando = False
 
+    else:
+        oponete = 0
+        while oponete == 0:
+            linha_sorteada = random.randint(0,9)
+            coluna_sorteada = random.randint(0,9)
+
+            jogada_oponente = [linha_sorteada,coluna_sorteada]
+            if jogada_oponente not in jogadas_oponentes:
+                jogadas_oponentes.append(jogada_oponente)
+                oponete = -1
+        
+        print(f'Seu oponente está atacando na linha {linha_sorteada} e coluna {coluna_sorteada}')
+
+        tabjogador = faz_jogada(tabjogador,linha_sorteada,coluna_sorteada)
+        oponente_atacou =  afundados(frotav, tabjogador)
+        if oponente_atacou == 10:
+            print('Xi! O oponente derrubou toda a sua frota =(')
+            jogando = False
+        else:
+            print(monta_tabuleiros(tabjogador,taboponente))
+
